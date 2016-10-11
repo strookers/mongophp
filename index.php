@@ -8,6 +8,9 @@
 
 require_once("vendor/autoload.php");
 
+// For more information on what you can and can't do with the mongo library
+// Refer to http://mongodb.github.io/mongo-php-library/
+
 // connect
 $mongo = new \MongoDB\Client("mongodb://admin:admin123@95.85.45.220:27017/");
 
