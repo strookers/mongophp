@@ -10,14 +10,13 @@ require_once "vendor/autoload.php";
 // connect
 $m = new MongoClient("mongodb://admin:admin123@95.85.45.220:27017/");
 
-// select a database
-$db = $m->campanion;
-
-// select a collection (analogous to a relational database's table)
-$collection = $db->test;
+// Use the companion database, and the test collection
+$collection = $m->selectCollection("companion", "test");
 
 // add a record
 $document = array( "title" => "Calvin and Hobbes", "author" => "Bill Watterson" );
+
+// Insert a record into the collection
 $collection->insert($document);
 
 // add another record, with a different "shape"
