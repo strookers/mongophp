@@ -1,31 +1,15 @@
 {
-    "name": "mongo",
-    "version": "1.6.14",
-    "type": "extension",
-    "license": [
-        "Apache License"
-    ],
+    "name": "strookers/mongophp",
+    "description": "MongoDB Test",
+    "minimum-stability": "dev",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Derick Rethans",
-            "email": "derick@php.net"
-        },
-        {
-            "name": "Hannes Magnusson",
-            "email": "bjori@php.net"
-        },
-        {
-            "name": "Jeremy Mikola",
-            "email": "jmikola@php.net"
+            "name": "Michael",
+            "email": "strookers@gmail.com"
         }
     ],
-    "description": "MongoDB database driver",
-    "extra": {
-        "configure-options": {
-            "with-mongo-sasl": {
-                "default": "no",
-                "prompt": "Build with Cyrus SASL (MongoDB Enterprise Authentication) support?"
-            }
-        }
+    "require": {
+        "mongodb/mongodb": "1.0.*"
     }
 }

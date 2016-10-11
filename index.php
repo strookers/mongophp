@@ -6,23 +6,26 @@
 <body>
 <?php
 
-require_once "vendor/autoload.php";
+require_once("vendor/autoload.php");
+
+// For more information on what you can and can't do with the mongo library
+// Refer to http://mongodb.github.io/mongo-php-library/
+
 // connect
-$m = new MongoClient("mongodb://admin:admin123@95.85.45.220:27017/");
+$mongo = new \MongoDB\Client("mongodb://admin:admin123@95.85.45.220:27017/");
 
-// select a database
-$db = $m->campanion;
-
-// select a collection (analogous to a relational database's table)
-$collection = $db->test;
+// Use the companion database, and the test collection
+$collection = $mongo->selectCollection("companion", "test");
 
 // add a record
 $document = array( "title" => "Calvin and Hobbes", "author" => "Bill Watterson" );
-$collection->insert($document);
+
+// Insert a record into the collection
+$collection->insertOne($document);
 
 // add another record, with a different "shape"
 $document = array( "title" => "XKCD", "online" => true );
-$collection->insert($document);
+$collection->insertOne($document);
 
 // find everything in the collection
 $cursor = $collection->find();
