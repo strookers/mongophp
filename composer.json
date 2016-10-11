@@ -8,8 +8,8 @@
             "name": "Michael",
             "email": "strookers@gmail.com"
         }
-    ]
+    ],
     "require": {
-        "mongodb/mongodb": "1.0.*",
+        "mongodb/mongodb": "1.0.*"
     }
 }
